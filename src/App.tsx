@@ -246,31 +246,51 @@ export default function App() {
                 variants={heroContainerVariants}
                 initial="hidden"
                 animate="visible"
-                className="lg:col-span-8 flex flex-col items-start text-left justify-center"
+                className="lg:col-span-10 flex flex-col items-stretch text-left justify-center w-full"
               >
                 <motion.h1 
                   variants={heroItemVariants}
-                  className="heading-display text-white text-left max-w-7xl font-medium tracking-tight mb-6 flex flex-col items-start"
+                  className="heading-display text-white text-left max-w-7xl font-medium tracking-tight mb-6 flex flex-col items-start w-full"
                 >
-                  <span className="text-7xl sm:text-9xl lg:text-[120px] font-sans font-black tracking-[-6px] leading-[0.85] text-white uppercase">
+                  {/* Line 1: GROW */}
+                  <span className="text-7xl sm:text-9xl lg:text-[120px] font-sans font-black tracking-[-6px] leading-[0.85] text-white uppercase mb-3 sm:mb-5">
                     GROW
                   </span>
-                  <span className="text-6xl sm:text-8xl lg:text-[100px] font-classic italic tracking-[-3px] leading-[0.9] text-white">
-                    your brand
-                  </span>
+
+                  {/* Line 2: your (left) ... INTELLIGENT (right) */}
+                  <div className="flex items-center justify-between w-full pr-0">
+                    <span className="text-5xl sm:text-8xl lg:text-[100px] font-classic italic tracking-[-3px] leading-[0.9] text-white">
+                      your
+                    </span>
+                    <span className="text-3xl sm:text-7xl lg:text-[90px] font-sans font-black tracking-[-4px] lg:tracking-[-6px] leading-[0.85] text-white uppercase text-right">
+                      intelligent
+                    </span>
+                  </div>
+
+                  {/* Line 3: brand (left) ... AGENTS (right) */}
+                  <div className="flex items-center justify-between w-full pr-0 mt-2 sm:mt-4">
+                    <span className="text-5xl sm:text-8xl lg:text-[100px] font-classic italic tracking-[-3px] leading-[0.9] text-white">
+                      brand
+                    </span>
+                    <span className="text-3xl sm:text-7xl lg:text-[90px] font-sans font-black tracking-[-4px] lg:tracking-[-6px] leading-[0.85] text-white uppercase text-right">
+                      agents
+                    </span>
+                  </div>
+
+                  {/* Line 4: with */}
                   <span className="text-2xl sm:text-3xl font-classic italic font-light tracking-wide text-zinc-300 pl-3 my-4">
                     with
-                  </span>
-                  <span className="text-6xl sm:text-8xl lg:text-[105px] font-classic italic tracking-[-3px] leading-[0.95] text-white">
-                    intelligent agents
                   </span>
                 </motion.h1>
 
                  {/* Action CTA Button */}
                 <motion.div 
                   variants={heroItemVariants}
-                  className="w-full sm:w-[280px] mt-4"
+                  className="w-full sm:w-[280px] mt-4 flex flex-col gap-2 self-start"
                 >
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-100 font-semibold pl-1">
+                    AI Agent That Works 24/7
+                  </span>
                   <motion.button
                     whileHover={{ scale: 1.03, y: -3 }}
                     whileTap={{ scale: 0.94 }}
