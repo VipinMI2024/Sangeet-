@@ -325,7 +325,7 @@ export default function App() {
 
               {/* Right block (absolute-right, vertically matching height, top and bottom aligned) */}
               <div className="absolute right-0 top-0 bottom-0 flex items-center justify-end select-none pointer-events-none z-0">
-                <span className="text-[180px] sm:text-[280px] lg:text-[340px] font-sans font-black tracking-[-8px] lg:tracking-[-14px] leading-[0.72] text-white opacity-95 h-full flex items-center">
+                <span className="text-[180px] sm:text-[280px] lg:text-[340px] font-sans font-black tracking-[-8px] lg:tracking-[-14px] leading-[0.72] text-white opacity-95 h-full flex items-center -translate-y-[2%]">
                   AI
                 </span>
               </div>
