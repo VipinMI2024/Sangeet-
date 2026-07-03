@@ -101,6 +101,73 @@ export default function App() {
     setVotedIds((prev) => [...prev, id]);
   };
 
+  const renderRoadmapCard = (item: RoadmapItem, keyPrefix: string) => {
+    const isVoted = votedIds.includes(item.id);
+    const getRoadmapIcon = (name: string) => {
+      switch (name) {
+        case "WhatsApp API":
+          return (
+            <svg className="h-6 w-6 text-emerald-500" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+            </svg>
+          );
+        case "AI Voice Bots":
+          return <Mic className="h-6 w-6 text-indigo-500" />;
+        case "Data Scraper":
+          return <Database className="h-6 w-6 text-amber-500" />;
+        case "Lead Generator":
+          return <Target className="h-6 w-6 text-rose-500" />;
+        case "LinkedIn AI Agent Pro":
+          return <Linkedin className="h-6 w-6 text-blue-500" />;
+        default:
+          return <Sparkles className="h-6 w-6 text-slate-500" />;
+      }
+    };
+
+    return (
+      <div
+        key={`${keyPrefix}-${item.id}`}
+        className="bg-paper-white border border-ash/75 p-7 rounded-[24px] flex flex-col justify-between shadow-none hover:bg-bone-mist/5 transition-shadow w-[320px] sm:w-[360px] shrink-0 text-left"
+      >
+        <div>
+          {/* Icon & Tag Row */}
+          <div className="flex items-center justify-between mb-4">
+            <div className="p-2.5 bg-bone-mist/50 dark:bg-zinc-800/40 rounded-xl border border-ash/10 inline-flex">
+              {getRoadmapIcon(item.name)}
+            </div>
+            <span className="inline-block text-xs font-mono font-bold bg-bark text-paper-white px-2.5 py-1 rounded-full">
+              {item.tag}
+            </span>
+          </div>
+          <h4 className="text-lg font-sans font-semibold text-bark mb-2 leading-snug">{item.name}</h4>
+          <p className="text-sm text-slate leading-relaxed mb-6 font-sans">{item.description}</p>
+        </div>
+
+        <div className="border-t border-ash/50 pt-4 flex items-center justify-between mt-auto">
+          <div className="flex items-center gap-1.5 text-sm text-slate font-mono">
+            <TrendingUp className="h-4 w-4 text-sage" />
+            <span>{item.upvotes} votes</span>
+          </div>
+          
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => handleVote(item.id)}
+            disabled={isVoted}
+            className={`p-2 rounded-full transition cursor-pointer focus:outline-none ${
+              isVoted
+                ? "bg-sage/10 text-sage"
+                : "bg-bone-mist hover:bg-ash/40 text-bark"
+            }`}
+            title={isVoted ? "Upvoted!" : "Upvote Feature"}
+          >
+            <Check className="h-4 w-4" />
+          </motion.button>
+        </div>
+      </div>
+    );
+  };
+
   // Launch prefilled Book Demo Modal
   const handleDeployAgentClick = (agentName: string) => {
     setPreselectedAgent(agentName);
@@ -393,82 +460,24 @@ export default function App() {
               </p>
             </motion.div>
 
-            {/* Timeline Cards Grid */}
             <motion.div 
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6"
+              className="w-full overflow-hidden relative flex gap-8 py-4"
             >
-              {roadmapItems.map((item) => {
-                const isVoted = votedIds.includes(item.id);
-                const getRoadmapIcon = (name: string) => {
-                  switch (name) {
-                    case "WhatsApp API":
-                      return (
-                        <svg className="h-6 w-6 text-emerald-500" fill="currentColor" viewBox="0 0 16 16">
-                          <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-                        </svg>
-                      );
-                    case "AI Voice Bots":
-                      return <Mic className="h-6 w-6 text-indigo-500" />;
-                    case "Data Scraper":
-                      return <Database className="h-6 w-6 text-amber-500" />;
-                    case "Lead Generator":
-                      return <Target className="h-6 w-6 text-rose-500" />;
-                    case "LinkedIn AI Agent Pro":
-                      return <Linkedin className="h-6 w-6 text-blue-500" />;
-                    default:
-                      return <Sparkles className="h-6 w-6 text-slate-500" />;
-                  }
-                };
+              {/* First loop container */}
+              <div className="animate-marquee flex gap-8 shrink-0 hover:[animation-play-state:paused] py-2">
+                {roadmapItems.map((item) => renderRoadmapCard(item, "set1"))}
+                {roadmapItems.map((item) => renderRoadmapCard(item, "set2"))}
+              </div>
 
-                return (
-                  <motion.div
-                    key={item.id}
-                    whileHover={{ y: -4, scale: 1.01 }}
-                    transition={{ duration: 0.2 }}
-                    className="bg-paper-white border border-ash/75 p-7 rounded-[24px] flex flex-col justify-between shadow-none hover:bg-bone-mist/5 transition-shadow"
-                  >
-                    <div>
-                      {/* Icon & Tag Row */}
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="p-2.5 bg-bone-mist/50 dark:bg-zinc-800/40 rounded-xl border border-ash/10 inline-flex">
-                          {getRoadmapIcon(item.name)}
-                        </div>
-                        <span className="inline-block text-xs font-mono font-bold bg-bark text-paper-white px-2.5 py-1 rounded-full">
-                          {item.tag}
-                        </span>
-                      </div>
-                      <h4 className="text-lg font-sans font-semibold text-bark mb-2 leading-snug">{item.name}</h4>
-                      <p className="text-sm text-slate leading-relaxed mb-6 font-sans">{item.description}</p>
-                    </div>
-
-                    <div className="border-t border-ash/50 pt-4 flex items-center justify-between mt-auto">
-                      <div className="flex items-center gap-1.5 text-sm text-slate font-mono">
-                        <TrendingUp className="h-4 w-4 text-sage" />
-                        <span>{item.upvotes} votes</span>
-                      </div>
-                      
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        onClick={() => handleVote(item.id)}
-                        disabled={isVoted}
-                        className={`p-2 rounded-full transition cursor-pointer focus:outline-none ${
-                          isVoted
-                            ? "bg-sage/10 text-sage"
-                            : "bg-bone-mist hover:bg-ash/40 text-bark"
-                        }`}
-                        title={isVoted ? "Upvoted!" : "Upvote Feature"}
-                      >
-                        <Check className="h-4 w-4" />
-                      </motion.button>
-                    </div>
-                  </motion.div>
-                );
-              })}
+              {/* Second loop container (duplicate) */}
+              <div className="animate-marquee flex gap-8 shrink-0 hover:[animation-play-state:paused] py-2" aria-hidden="true">
+                {roadmapItems.map((item) => renderRoadmapCard(item, "set3"))}
+                {roadmapItems.map((item) => renderRoadmapCard(item, "set4"))}
+              </div>
             </motion.div>
 
           </div>
