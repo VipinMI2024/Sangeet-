@@ -309,12 +309,11 @@ export default function App() {
             
             {/* Top row: Left block and Right block overlapping */}
             <div 
-              className="relative" 
+              className="relative w-full max-w-[1400px]" 
               style={{
-                width: '1400px',
-                height: '500px',
+                height: 'clamp(250px, 35vw, 500px)',
                 borderRadius: '0px',
-                margin: '0 0 0 0px',
+                margin: '0 auto',
                 padding: 0,
                 fontFamily: 'Inter, sans-serif',
                 fontSize: '16px',
@@ -324,7 +323,8 @@ export default function App() {
                 color: '#FFFFFF',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                overflow: 'hidden'
               }}
             >
               
@@ -332,16 +332,16 @@ export default function App() {
               <div 
                 className="relative z-10 flex flex-col items-center text-center pointer-events-auto"
                 style={{
-                  transform: 'translateX(-150px)' // <-- EDIT THIS VALUE TO SHIFT: e.g. 'translateX(-30px)' to move left, 'translateX(30px)' to move right
+                  transform: 'translateX(clamp(-150px, -10vw, 0px))' // <-- Responsive translate shift
                 }}
               >
-                <span style={{ fontFamily: 'Sora, sans-serif', fontSize: '160px', lineHeight: '160px', fontWeight: 500, letterSpacing: '-6.4px', color: '#FFFFFF', width: '414.25px', height: '160px', borderRadius: '0px', display: 'block' }}>
+                <span style={{ fontFamily: 'Sora, sans-serif', fontSize: 'clamp(50px, 11vw, 160px)', lineHeight: 'clamp(50px, 11vw, 160px)', fontWeight: 500, letterSpacing: 'clamp(-6.4px, -0.4vw, -2px)', color: '#FFFFFF', width: 'min(414.25px, 100%)', height: 'auto', borderRadius: '0px', display: 'block' }}>
                   Build
                 </span>
-                <h1 className="text-6xl" style={{ fontFamily: '"Bodoni Moda", serif', fontSize: '160px', lineHeight: '160px', fontWeight: 500, letterSpacing: '-6.4px', color: '#FFFFFF', width: '419.85px', height: '160px', borderRadius: '0px', margin: 0, padding: 0, display: 'block' }}>
+                <h1 className="text-6xl" style={{ fontFamily: '"Bodoni Moda", serif', fontSize: 'clamp(50px, 11vw, 160px)', lineHeight: 'clamp(50px, 11vw, 160px)', fontWeight: 500, letterSpacing: 'clamp(-6.4px, -0.4vw, -2px)', color: '#FFFFFF', width: 'min(419.85px, 100%)', height: 'auto', borderRadius: '0px', margin: 0, padding: 0, display: 'block' }}>
                   Brands
                 </h1>
-                <span className="text-sm" style={{ fontFamily: '"Bodoni Moda", serif', fontSize: '20px', lineHeight: '28px', fontWeight: 500, letterSpacing: '8px', color: '#FFFFFF', width: '70.5px', height: '28px', borderRadius: '0px', marginTop: '16px', marginBottom: '-8px', padding: 0, display: 'block' }}>
+                <span className="text-sm" style={{ fontFamily: '"Bodoni Moda", serif', fontSize: 'clamp(12px, 1.4vw, 20px)', lineHeight: 'clamp(16px, 2vw, 28px)', fontWeight: 500, letterSpacing: 'clamp(4px, 0.5vw, 8px)', color: '#FFFFFF', width: 'min(70.5px, 100%)', height: 'auto', borderRadius: '0px', marginTop: 'clamp(8px, 1vw, 16px)', marginBottom: 'clamp(-8px, -0.5vw, -4px)', padding: 0, display: 'block' }}>
                   with
                 </span>
               </div>
@@ -350,10 +350,10 @@ export default function App() {
               <div 
                 className="absolute right-0 top-0 bottom-0 flex items-center justify-end select-none pointer-events-none z-0"
                 style={{
-                  transform: 'translateX(0px)' // <-- EDIT THIS: e.g. 'translateX(-30px)' to move 'AI' left, 'translateX(30px)' to move 'AI' right
+                  transform: 'translateX(clamp(-80px, -5vw, 0px))' // <-- Responsive translate shift
                 }}
               >
-                <span className="text-[12rem]" style={{ fontFamily: 'Inter, sans-serif', fontSize: '448px', lineHeight: '448px', fontWeight: 500, letterSpacing: '-22.4px', color: '#FFFFFF', width: '394.888px', height: '448px', borderRadius: '0px', margin: 0, padding: 0, display: 'flex', alignItems: 'center' }}>
+                <span className="text-[12rem]" style={{ fontFamily: 'Inter, sans-serif', fontSize: 'clamp(120px, 30vw, 448px)', lineHeight: 'clamp(120px, 30vw, 448px)', fontWeight: 500, letterSpacing: 'clamp(-22.4px, -1.5vw, -6px)', color: '#FFFFFF', width: 'min(394.888px, 100%)', height: 'auto', borderRadius: '0px', margin: 0, padding: 0, display: 'flex', alignItems: 'center' }}>
                   AI
                 </span>
               </div>
@@ -362,11 +362,10 @@ export default function App() {
             {/* Bottom block: Subheading + Button centered column */}
             <div className="w-full flex flex-col items-center text-center mt-auto space-y-8 z-10">
               
-              {/* Subheading: "Hire AI agents that Grows you." */}
+              {/* Subheading: "AI that work 24/7" */}
               <h2 className="text-2xl sm:text-[32px] lg:text-[36px] text-white font-sans tracking-tight leading-snug">
-                <span className="font-normal">Hire </span>
-                <span className="font-bold">AI agents</span>
-                <span className="font-normal"> that Grows you.</span>
+                <span className="font-bold">AI</span>
+                <span className="font-normal"> that work 24/7</span>
               </h2>
 
               {/* Pill-shaped button: "BOOK DEMO CALL" */}
