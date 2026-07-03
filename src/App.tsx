@@ -314,7 +314,7 @@ export default function App() {
                 width: '1400px',
                 height: '500px',
                 borderRadius: '0px',
-                margin: '0 0 0 -50px',
+                margin: '0 0 0 0px',
                 padding: 0,
                 fontFamily: 'Inter, sans-serif',
                 fontSize: '16px',
@@ -329,7 +329,12 @@ export default function App() {
             >
               
               {/* Centered block */}
-              <div className="relative z-10 flex flex-col items-center text-center pointer-events-auto">
+              <div 
+                className="relative z-10 flex flex-col items-center text-center pointer-events-auto"
+                style={{
+                  transform: 'translateX(0px)' // <-- EDIT THIS VALUE TO SHIFT: e.g. 'translateX(-30px)' to move left, 'translateX(30px)' to move right
+                }}
+              >
                 <span style={{ fontFamily: 'Sora, sans-serif', fontSize: '160px', lineHeight: '160px', fontWeight: 500, letterSpacing: '-6.4px', color: '#FFFFFF', width: '414.25px', height: '160px', borderRadius: '0px', display: 'block' }}>
                   Build
                 </span>
