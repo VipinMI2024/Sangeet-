@@ -332,7 +332,7 @@ export default function App() {
               <div 
                 className="relative z-10 flex flex-col items-center text-center pointer-events-auto"
                 style={{
-                  transform: 'translateX(0px)' // <-- EDIT THIS VALUE TO SHIFT: e.g. 'translateX(-30px)' to move left, 'translateX(30px)' to move right
+                  transform: 'translateX(-150px)' // <-- EDIT THIS VALUE TO SHIFT: e.g. 'translateX(-30px)' to move left, 'translateX(30px)' to move right
                 }}
               >
                 <span style={{ fontFamily: 'Sora, sans-serif', fontSize: '160px', lineHeight: '160px', fontWeight: 500, letterSpacing: '-6.4px', color: '#FFFFFF', width: '414.25px', height: '160px', borderRadius: '0px', display: 'block' }}>
@@ -347,7 +347,12 @@ export default function App() {
               </div>
 
               {/* Right block (absolute-right, vertically matching height, top and bottom aligned) */}
-              <div className="absolute right-0 top-0 bottom-0 flex items-center justify-end select-none pointer-events-none z-0">
+              <div 
+                className="absolute right-0 top-0 bottom-0 flex items-center justify-end select-none pointer-events-none z-0"
+                style={{
+                  transform: 'translateX(0px)' // <-- EDIT THIS: e.g. 'translateX(-30px)' to move 'AI' left, 'translateX(30px)' to move 'AI' right
+                }}
+              >
                 <span className="text-[12rem]" style={{ fontFamily: 'Inter, sans-serif', fontSize: '448px', lineHeight: '448px', fontWeight: 500, letterSpacing: '-22.4px', color: '#FFFFFF', width: '394.888px', height: '448px', borderRadius: '0px', margin: 0, padding: 0, display: 'flex', alignItems: 'center' }}>
                   AI
                 </span>
