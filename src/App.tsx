@@ -495,11 +495,11 @@ export default function App() {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <h2 className="heading-editorial text-bark flex flex-col items-center gap-2">
-                <span className="text-sm sm:text-base font-mono font-medium tracking-[0.05em] text-slate uppercase opacity-85">
+              <h2 className="heading-editorial flex flex-col items-center gap-3">
+                <span className="text-xl sm:text-2xl lg:text-[28px] font-mono font-bold tracking-[0.02em] text-bark uppercase">
                   "AI is changing fast in 2026."
                 </span>
-                <span className="text-5xl sm:text-7xl lg:text-[76px] font-sans font-bold tracking-[-3px] leading-[0.98] text-bark mt-2">
+                <span className="text-6xl sm:text-8xl lg:text-[100px] font-sans font-black tracking-[-4px] leading-[0.95] text-bark mt-1">
                   Are you?
                 </span>
               </h2>
