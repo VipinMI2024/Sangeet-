@@ -324,18 +324,18 @@ export default function App() {
                     BUILD
                   </span>
 
-                  {/* Line 2: brands (left) ... with (right) */}
-                  <div className="flex items-center justify-between w-full pr-0">
-                    <span className="text-5xl sm:text-8xl lg:text-[100px] font-classic italic tracking-[-3px] leading-[0.9] text-white">
-                      brands
-                    </span>
-                    <span className="text-3xl sm:text-7xl lg:text-[90px] font-sans font-black tracking-[-4px] lg:tracking-[-6px] leading-[0.85] text-white uppercase text-right">
-                      with
-                    </span>
-                  </div>
+                  {/* Line 2: brands */}
+                  <span className="text-5xl sm:text-8xl lg:text-[100px] font-classic italic tracking-[-3px] leading-[0.9] text-white">
+                    brands
+                  </span>
 
-                  {/* Line 3: AI */}
-                  <div className="flex items-center justify-end w-full pr-0 mt-2 sm:mt-4">
+                  {/* Line 3: with (brands ke niche chota sa) */}
+                  <span className="text-2xl sm:text-3xl font-classic italic font-light tracking-wide text-zinc-300 pl-3 my-4">
+                    with
+                  </span>
+
+                  {/* Line 4: AI */}
+                  <div className="flex items-center justify-end w-full pr-0">
                     <span className="text-7xl sm:text-9xl lg:text-[120px] font-sans font-black tracking-[-6px] leading-[0.85] text-white uppercase text-right">
                       AI
                     </span>
