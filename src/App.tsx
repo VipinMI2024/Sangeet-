@@ -295,7 +295,7 @@ export default function App() {
         </AnimatePresence>
 
         {/* HERO SECTION */}
-        <section className="relative overflow-hidden min-h-[calc(100vh-120px)] flex items-center justify-center border-b border-zinc-800 bg-[#0a0a0c]">
+        <section className="relative overflow-hidden min-h-[calc(100vh-100px)] flex flex-col items-center justify-center py-16 border-b border-zinc-800 bg-[#0a0a0c]">
           <motion.div
             variants={heroBgVariants}
             initial="hidden"
@@ -305,67 +305,57 @@ export default function App() {
             <TubesBackground className="opacity-90 h-full w-full" />
           </motion.div>
           
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col justify-between min-h-[calc(100vh-220px)]">
+            
+            {/* Top row: Left block and Right block overlapping */}
+            <div className="relative w-full min-h-[380px] lg:min-h-[460px] flex items-center mb-12">
               
-              {/* Text Blocks */}
-              <motion.div 
-                variants={heroContainerVariants}
-                initial="hidden"
-                animate="visible"
-                className="lg:col-span-10 flex flex-col items-stretch text-left justify-center w-full"
-              >
-                <motion.h1 
-                  variants={heroItemVariants}
-                  className="heading-display text-white text-left max-w-7xl font-medium tracking-tight mb-6 flex flex-col items-start w-full"
-                >
-                  {/* Line 1: BUILD */}
-                  <span className="text-7xl sm:text-9xl lg:text-[120px] font-sans font-black tracking-[-6px] leading-[0.85] text-white uppercase mb-3 sm:mb-5">
-                    BUILD
-                  </span>
+              {/* Left block (absolute-left) */}
+              <div className="absolute left-0 z-10 flex flex-col items-start text-left pointer-events-auto">
+                <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.85] text-white">
+                  Build
+                </span>
+                <span className="text-xl sm:text-[24px] font-classic italic text-zinc-400 tracking-[0.15em] my-2 pl-2">
+                  with
+                </span>
+                <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.85] text-white">
+                  Brands
+                </span>
+              </div>
 
-                  {/* Line 2: brands */}
-                  <span className="text-5xl sm:text-8xl lg:text-[100px] font-classic italic tracking-[-3px] leading-[0.9] text-white">
-                    brands
-                  </span>
-
-                  {/* Line 3: with (brands ke niche chota sa) */}
-                  <span className="text-2xl sm:text-3xl font-classic italic font-light tracking-wide text-zinc-300 pl-3 my-4">
-                    with
-                  </span>
-
-                  {/* Line 4: AI */}
-                  <div className="flex items-center justify-end w-full pr-0">
-                    <span className="text-7xl sm:text-9xl lg:text-[120px] font-sans font-black tracking-[-6px] leading-[0.85] text-white uppercase text-right">
-                      AI
-                    </span>
-                  </div>
-                </motion.h1>
-
-                 {/* Action CTA Button */}
-                <motion.div 
-                  variants={heroItemVariants}
-                  className="w-full sm:w-[280px] mt-4 flex flex-col gap-2 self-start"
-                >
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-100 font-semibold pl-1">
-                    AI Agent That Works 24/7
-                  </span>
-                  <motion.button
-                    whileHover={{ scale: 1.03, y: -3 }}
-                    whileTap={{ scale: 0.94 }}
-                    transition={{ type: "spring", stiffness: 500, damping: 18 }}
-                    onClick={() => setIsDemoModalOpen(true)}
-                    className="group w-full bg-white hover:bg-zinc-100 hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] text-black text-center font-medium text-base py-4.5 px-8 rounded-full transition-all duration-150 cursor-pointer focus:outline-none"
-                  >
-                    <span className="flex items-center justify-center gap-2">
-                      <span>{siteContent.hero.primaryCta.toUpperCase()}</span>
-                      <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1.5" />
-                    </span>
-                  </motion.button>
-                </motion.div>
-              </motion.div>
-
+              {/* Right block (absolute-right, huge, right-aligned, overlapping vertically) */}
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 z-0 text-right select-none pointer-events-none">
+                <span className="text-[180px] sm:text-[280px] lg:text-[340px] font-sans font-black tracking-[-8px] lg:tracking-[-14px] leading-[0.75] text-white opacity-95">
+                  AI
+                </span>
+              </div>
             </div>
+
+            {/* Bottom block: Subheading + Button centered column */}
+            <div className="w-full flex flex-col items-center text-center mt-auto space-y-8 z-10">
+              
+              {/* Subheading: "Hire AI agents that Grows you." */}
+              <h2 className="text-2xl sm:text-[32px] lg:text-[36px] text-white font-sans tracking-tight leading-snug">
+                <span className="font-normal">Hire </span>
+                <span className="font-bold">AI agents</span>
+                <span className="font-normal"> that Grows you.</span>
+              </h2>
+
+              {/* Pill-shaped button: "BOOK DEMO CALL" */}
+              <motion.div className="w-full sm:w-[280px]">
+                <motion.button
+                  whileHover={{ scale: 1.03, y: -3 }}
+                  whileTap={{ scale: 0.94 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 18 }}
+                  onClick={() => setIsDemoModalOpen(true)}
+                  className="group w-full bg-white hover:bg-zinc-100 hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] text-black text-center font-semibold text-sm tracking-[0.15em] py-4.5 px-8 rounded-full transition-all duration-150 cursor-pointer focus:outline-none flex items-center justify-center gap-2"
+                >
+                  <span>BOOK DEMO CALL</span>
+                  <ArrowRight className="h-4.5 w-4.5 transition-transform duration-200 group-hover:translate-x-1.5" />
+                </motion.button>
+              </motion.div>
+            </div>
+            
           </div>
         </section>
 
