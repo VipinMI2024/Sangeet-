@@ -308,14 +308,14 @@ export default function App() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col justify-between min-h-[calc(100vh-220px)]">
             
             {/* Top row: Left block and Right block overlapping */}
-            <div className="relative w-full flex items-center justify-between mb-12">
+            <div className="relative w-full flex items-center justify-center mb-12 min-h-[380px] lg:min-h-[460px]">
               
-              {/* Left block (relative to define height of top row) */}
-              <div className="relative z-10 flex flex-col items-start text-left pointer-events-auto">
+              {/* Centered block */}
+              <div className="relative z-10 flex flex-col items-center text-center pointer-events-auto">
                 <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.8] text-white">
                   Build
                 </span>
-                <span className="text-xl sm:text-[24px] font-classic italic text-white tracking-[0.15em] my-1 pl-2">
+                <span className="text-xl sm:text-[24px] font-classic italic text-white tracking-[0.15em] my-1">
                   with
                 </span>
                 <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.8] text-white">
