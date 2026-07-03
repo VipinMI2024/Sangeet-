@@ -305,7 +305,7 @@ export default function App() {
             <TubesBackground className="opacity-90 h-full w-full" />
           </motion.div>
           
-          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col justify-between min-h-[calc(100vh-220px)]">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col justify-center min-h-[calc(100vh-220px)] py-8">
             
             {/* Top row: Left block and Right block overlapping */}
             <div 
@@ -360,7 +360,7 @@ export default function App() {
             </div>
 
             {/* Bottom block: Subheading + Button centered column */}
-            <div className="w-full flex flex-col items-center text-center mt-auto space-y-8 z-10">
+            <div className="w-full flex flex-col items-center text-center mt-6 sm:mt-10 space-y-8 z-10">
               
               {/* Subheading: "AI that work 24/7" */}
               <h2 className="text-2xl sm:text-[32px] lg:text-[29px] text-white font-sans tracking-tight leading-snug">
