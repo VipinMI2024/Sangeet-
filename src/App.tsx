@@ -550,9 +550,8 @@ export default function App() {
           </div>
         </section>
 
-        {/* CONTACT / BESPOKE CONSULTATION */}
         <section id="contact" className="py-20 lg:py-28 border-b border-ash bg-bone-mist">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
               
               {/* Contact Information Cards */}
@@ -564,49 +563,49 @@ export default function App() {
                 className="lg:col-span-5 flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-[13px] font-sans font-medium uppercase tracking-[0.071em] text-bark">
+                  <span className="text-sm font-sans font-medium uppercase tracking-[0.071em] text-bark">
                     {siteContent.contact.eyebrow}
                   </span>
-                  <h2 className="heading-editorial text-3xl sm:text-4xl lg:text-[40px] tracking-[-1.5px] leading-[1.1] text-bark mt-4 mb-6">
+                  <h2 className="heading-editorial text-4xl sm:text-5xl lg:text-[54px] tracking-[-1.5px] leading-[1.1] text-bark mt-4 mb-6">
                     {siteContent.contact.heading}
                   </h2>
-                  <p className="text-sm text-slate leading-relaxed max-w-sm mb-8 font-sans">
+                  <p className="text-base text-slate leading-relaxed max-w-md mb-8 font-sans">
                     Let's collaborate on enterprise-grade integrations. Visit our regional office in Delhi or connect via our digital channels.
                   </p>
                 </div>
 
                 <div className="space-y-6">
-                  <div className="flex items-center gap-4 p-4.5 bg-paper-white border border-ash rounded-[20px] shadow-none">
-                    <div className="h-10 w-10 rounded-full bg-bark/5 border border-ash flex items-center justify-center shrink-0">
-                      <Mail className="h-5 w-5 text-bark" />
+                  <div className="flex items-center gap-4 p-5 bg-paper-white border border-ash rounded-[20px] shadow-none">
+                    <div className="h-12 w-12 rounded-full bg-bark/5 border border-ash flex items-center justify-center shrink-0">
+                      <Mail className="h-6 w-6 text-bark" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-mono text-slate uppercase">EMAIL GATEWAY</p>
-                      <a href={`mailto:${siteContent.contact.email}`} className="text-sm font-sans font-semibold text-bark hover:underline">
+                      <p className="text-xs font-mono text-slate uppercase">EMAIL GATEWAY</p>
+                      <a href={`mailto:${siteContent.contact.email}`} className="text-base font-sans font-semibold text-bark hover:underline">
                         {siteContent.contact.email}
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 p-4.5 bg-paper-white border border-ash rounded-[20px] shadow-none">
-                    <div className="h-10 w-10 rounded-full bg-bark/5 border border-ash flex items-center justify-center shrink-0">
-                      <Phone className="h-5 w-5 text-bark" />
+                  <div className="flex items-center gap-4 p-5 bg-paper-white border border-ash rounded-[20px] shadow-none">
+                    <div className="h-12 w-12 rounded-full bg-bark/5 border border-ash flex items-center justify-center shrink-0">
+                      <Phone className="h-6 w-6 text-bark" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-mono text-slate uppercase">CALL CENTER DIRECT</p>
-                      <a href={`tel:${siteContent.contact.phone.replace(/\s+/g, '')}`} className="text-sm font-sans font-semibold text-bark hover:underline">
+                      <p className="text-xs font-mono text-slate uppercase">CALL CENTER DIRECT</p>
+                      <a href={`tel:${siteContent.contact.phone.replace(/\s+/g, '')}`} className="text-base font-sans font-semibold text-bark hover:underline">
                         {siteContent.contact.phone}
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 p-4.5 bg-paper-white border border-ash rounded-[20px] shadow-none">
-                    <div className="h-10 w-10 rounded-full bg-bark/5 border border-ash flex items-center justify-center shrink-0">
-                      <MapPin className="h-5 w-5 text-bark" />
+                  <div className="flex items-center gap-4 p-5 bg-paper-white border border-ash rounded-[20px] shadow-none">
+                    <div className="h-12 w-12 rounded-full bg-bark/5 border border-ash flex items-center justify-center shrink-0">
+                      <MapPin className="h-6 w-6 text-bark" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-mono text-slate uppercase">REGIONAL BASE</p>
-                      <span className="text-sm font-sans font-semibold text-bark">
+                      <p className="text-xs font-mono text-slate uppercase">REGIONAL BASE</p>
+                      <span className="text-base font-sans font-semibold text-bark">
                         {siteContent.contact.base}
                       </span>
                     </div>
@@ -622,19 +621,19 @@ export default function App() {
                 transition={{ duration: 0.7 }}
                 className="lg:col-span-7 bg-paper-white p-8 sm:p-10 rounded-[24px] border border-ash shadow-none"
               >
-                <h3 className="text-2xl font-sans font-semibold text-bark mb-1.5 tracking-tight">
+                <h3 className="text-3xl font-sans font-bold text-bark mb-1.5 tracking-tight">
                   {siteContent.customCta.heading}
                 </h3>
-                <p className="text-sm text-slate mb-6 font-sans">
+                <p className="text-base text-slate mb-6 font-sans">
                   {siteContent.customCta.subheading}
                 </p>
 
                 <form onSubmit={handleConsultSubmit} className="space-y-4">
                   {isConsultSuccess && (
-                    <div className="bg-sage/10 text-bark text-xs p-4 rounded-xl border border-sage/20 flex items-center gap-2 font-sans">
-                      <CheckCircle className="h-4 w-4 text-sage shrink-0" />
-                      <span>Consultation blueprint successfully registered. Our lab coordinator has queued your workflow!</span>
-                    </div>
+                     <div className="bg-sage/10 text-bark text-xs p-4 rounded-xl border border-sage/20 flex items-center gap-2 font-sans">
+                       <CheckCircle className="h-4 w-4 text-sage shrink-0" />
+                       <span>Consultation blueprint successfully registered. Our lab coordinator has queued your workflow!</span>
+                     </div>
                   )}
 
                   {consultError && (
@@ -645,7 +644,7 @@ export default function App() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-[11px] font-sans font-semibold text-bark uppercase tracking-wider mb-1">
+                      <label className="block text-xs font-sans font-semibold text-bark uppercase tracking-wider mb-1">
                         YOUR NAME
                       </label>
                       <input
@@ -654,11 +653,11 @@ export default function App() {
                         value={consultName}
                         onChange={(e) => setConsultName(e.target.value)}
                         placeholder="Ayush Malhotra"
-                        className="w-full bg-bone-mist/50 border border-ash/70 rounded-full px-5 py-3.5 text-sm focus:outline-none focus:border-bark text-bark"
+                        className="w-full bg-bone-mist/50 border border-ash/70 rounded-full px-6 py-4 text-base focus:outline-none focus:border-bark text-bark"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-sans font-semibold text-bark uppercase tracking-wider mb-1">
+                      <label className="block text-xs font-sans font-semibold text-bark uppercase tracking-wider mb-1">
                         BUSINESS EMAIL
                       </label>
                       <input
@@ -667,13 +666,13 @@ export default function App() {
                         value={consultEmail}
                         onChange={(e) => setConsultEmail(e.target.value)}
                         placeholder="ayushmalhotra1703@gmail.com"
-                        className="w-full bg-bone-mist/50 border border-ash/70 rounded-full px-5 py-3.5 text-sm focus:outline-none focus:border-bark text-bark"
+                        className="w-full bg-bone-mist/50 border border-ash/70 rounded-full px-6 py-4 text-base focus:outline-none focus:border-bark text-bark"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-sans font-semibold text-bark uppercase tracking-wider mb-1">
+                    <label className="block text-xs font-sans font-semibold text-bark uppercase tracking-wider mb-1">
                       PHONE NUMBER
                     </label>
                     <input
@@ -682,12 +681,12 @@ export default function App() {
                       value={consultPhone}
                       onChange={(e) => setConsultPhone(e.target.value)}
                       placeholder="+91 93113 74477"
-                      className="w-full bg-bone-mist/50 border border-ash/70 rounded-full px-5 py-3.5 text-sm focus:outline-none focus:border-bark text-bark"
+                      className="w-full bg-bone-mist/50 border border-ash/70 rounded-full px-6 py-4 text-base focus:outline-none focus:border-bark text-bark"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-sans font-semibold text-bark uppercase tracking-wider mb-1">
+                    <label className="block text-xs font-sans font-semibold text-bark uppercase tracking-wider mb-1">
                       CAMPAIGN / CUSTOM AGENT REQUIREMENTS
                     </label>
                     <textarea
@@ -696,7 +695,7 @@ export default function App() {
                       value={consultDetails}
                       onChange={(e) => setConsultDetails(e.target.value)}
                       placeholder="Specify your WhatsApp endpoint rules, CRM integrations or custom outreach lists..."
-                      className="w-full bg-bone-mist/50 border border-ash/70 rounded-2xl px-5 py-3.5 text-sm focus:outline-none focus:border-bark text-bark resize-none"
+                      className="w-full bg-bone-mist/50 border border-ash/70 rounded-2xl px-6 py-4 text-base focus:outline-none focus:border-bark text-bark resize-none"
                     />
                   </div>
 
@@ -705,16 +704,16 @@ export default function App() {
                     whileTap={{ scale: 0.99 }}
                     type="submit"
                     disabled={isConsultSubmitting}
-                    className="w-full bg-white hover:bg-zinc-100 disabled:opacity-50 text-black text-xs font-semibold py-4.5 px-6 rounded-full shadow-none transition flex items-center justify-center gap-2 cursor-pointer focus:outline-none"
+                    className="w-full bg-white hover:bg-zinc-100 disabled:opacity-50 text-sm font-semibold py-4.5 px-6 rounded-full shadow-none transition flex items-center justify-center gap-2 cursor-pointer focus:outline-none"
                   >
                     {isConsultSubmitting ? (
                       <>
-                        <RefreshCw className="h-4 w-4 animate-spin" />
+                        <RefreshCw className="h-5 w-5 animate-spin" />
                         <span>Queuing blueprint...</span>
                       </>
                     ) : (
                       <>
-                        <HeartHandshake className="h-4 w-4 text-[#cccc25]" />
+                        <HeartHandshake className="h-5 w-5 text-[#cccc25]" />
                         <span>{siteContent.customCta.cta.toUpperCase()}</span>
                       </>
                     )}
