@@ -312,7 +312,7 @@ export default function App() {
 
         {/* SPECIALIZED AGENT TEAMS */}
         <section id="agents" className="pt-14 pb-8 lg:pt-16 lg:pb-10 border-b border-ash bg-paper-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Roster Introduction */}
             <motion.div 
@@ -322,7 +322,7 @@ export default function App() {
               transition={{ duration: 0.6 }}
               className="max-w-3xl mx-auto text-center mb-10 flex flex-col items-center"
             >
-              <h2 className="heading-editorial text-3xl sm:text-4xl lg:text-[42px] tracking-[-1.5px] leading-[1.05] text-bark">
+              <h2 className="heading-editorial text-4xl sm:text-5xl lg:text-[54px] tracking-[-1.5px] leading-[1.05] text-bark">
                 AI Agent <span className="font-classic italic text-slate-blue/90">Teams</span>
               </h2>
             </motion.div>
@@ -372,7 +372,7 @@ export default function App() {
 
         {/* PRODUCT ROADMAP / COMING SOON */}
         <section id="roadmap" className="pt-14 pb-20 lg:pt-14 lg:pb-28 border-b border-ash bg-bone-mist">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
             <motion.div 
@@ -385,7 +385,7 @@ export default function App() {
               <span className="text-[13px] font-sans font-medium uppercase tracking-[0.071em] text-bark">
                 {siteContent.roadmap.eyebrow}
               </span>
-              <h2 className="heading-editorial text-3xl sm:text-4xl lg:text-[40px] tracking-[-1.5px] leading-[1.1] text-bark mt-4">
+              <h2 className="heading-editorial text-4xl sm:text-5xl lg:text-[54px] tracking-[-1.5px] leading-[1.1] text-bark mt-4">
                 {siteContent.roadmap.heading}
               </h2>
               <p className="text-sm sm:text-base text-slate leading-relaxed mt-3 max-w-xl mx-auto font-sans">
@@ -407,20 +407,20 @@ export default function App() {
                   switch (name) {
                     case "WhatsApp API":
                       return (
-                        <svg className="h-5 w-5 text-emerald-500" fill="currentColor" viewBox="0 0 16 16">
+                        <svg className="h-6 w-6 text-emerald-500" fill="currentColor" viewBox="0 0 16 16">
                           <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
                         </svg>
                       );
                     case "AI Voice Bots":
-                      return <Mic className="h-5 w-5 text-indigo-500" />;
+                      return <Mic className="h-6 w-6 text-indigo-500" />;
                     case "Data Scraper":
-                      return <Database className="h-5 w-5 text-amber-500" />;
+                      return <Database className="h-6 w-6 text-amber-500" />;
                     case "Lead Generator":
-                      return <Target className="h-5 w-5 text-rose-500" />;
+                      return <Target className="h-6 w-6 text-rose-500" />;
                     case "LinkedIn AI Agent Pro":
-                      return <Linkedin className="h-5 w-5 text-blue-500" />;
+                      return <Linkedin className="h-6 w-6 text-blue-500" />;
                     default:
-                      return <Sparkles className="h-5 w-5 text-slate-500" />;
+                      return <Sparkles className="h-6 w-6 text-slate-500" />;
                   }
                 };
 
@@ -429,25 +429,25 @@ export default function App() {
                     key={item.id}
                     whileHover={{ y: -4, scale: 1.01 }}
                     transition={{ duration: 0.2 }}
-                    className="bg-paper-white border border-ash/75 p-6 rounded-[24px] flex flex-col justify-between shadow-none hover:bg-bone-mist/5 transition-shadow"
+                    className="bg-paper-white border border-ash/75 p-7 rounded-[24px] flex flex-col justify-between shadow-none hover:bg-bone-mist/5 transition-shadow"
                   >
                     <div>
                       {/* Icon & Tag Row */}
                       <div className="flex items-center justify-between mb-4">
-                        <div className="p-2 bg-bone-mist/50 dark:bg-zinc-800/40 rounded-xl border border-ash/10 inline-flex">
+                        <div className="p-2.5 bg-bone-mist/50 dark:bg-zinc-800/40 rounded-xl border border-ash/10 inline-flex">
                           {getRoadmapIcon(item.name)}
                         </div>
-                        <span className="inline-block text-[10px] font-mono font-bold bg-bark text-paper-white px-2.5 py-1 rounded-full">
+                        <span className="inline-block text-xs font-mono font-bold bg-bark text-paper-white px-2.5 py-1 rounded-full">
                           {item.tag}
                         </span>
                       </div>
-                      <h4 className="text-base font-sans font-semibold text-bark mb-2 leading-snug">{item.name}</h4>
-                      <p className="text-xs text-slate leading-relaxed mb-6 font-sans">{item.description}</p>
+                      <h4 className="text-lg font-sans font-semibold text-bark mb-2 leading-snug">{item.name}</h4>
+                      <p className="text-sm text-slate leading-relaxed mb-6 font-sans">{item.description}</p>
                     </div>
 
                     <div className="border-t border-ash/50 pt-4 flex items-center justify-between mt-auto">
-                      <div className="flex items-center gap-1 text-xs text-slate font-mono">
-                        <TrendingUp className="h-3.5 w-3.5 text-sage" />
+                      <div className="flex items-center gap-1.5 text-sm text-slate font-mono">
+                        <TrendingUp className="h-4 w-4 text-sage" />
                         <span>{item.upvotes} votes</span>
                       </div>
                       
