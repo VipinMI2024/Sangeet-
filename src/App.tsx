@@ -312,20 +312,20 @@ export default function App() {
               
               {/* Centered block */}
               <div className="relative z-10 flex flex-col items-center text-center pointer-events-auto">
-                <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.8] text-white">
+                <span style={{ fontFamily: 'Sora, sans-serif', fontSize: '160px', lineHeight: '160px', fontWeight: 500, letterSpacing: '-6.4px', color: '#FFFFFF', width: '414.25px', height: '160px', borderRadius: '0px', display: 'block' }}>
                   Build
                 </span>
-                <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.8] text-white mt-1">
-                  Brand
-                </span>
-                <span className="text-base sm:text-lg font-classic italic text-white/90 tracking-[0.15em] mt-3">
+                <h1 className="text-6xl" style={{ fontFamily: '"Bodoni Moda", serif', fontSize: '160px', lineHeight: '160px', fontWeight: 500, letterSpacing: '-6.4px', color: '#FFFFFF', width: '419.85px', height: '160px', borderRadius: '0px', margin: 0, padding: 0, display: 'block' }}>
+                  Brands
+                </h1>
+                <span className="text-sm" style={{ fontFamily: '"Bodoni Moda", serif', fontSize: '20px', lineHeight: '28px', fontWeight: 500, letterSpacing: '8px', color: '#FFFFFF', width: '70.5px', height: '28px', borderRadius: '0px', marginTop: '16px', marginBottom: '-8px', padding: 0, display: 'block' }}>
                   with
                 </span>
               </div>
 
               {/* Right block (absolute-right, vertically matching height, top and bottom aligned) */}
               <div className="absolute right-0 top-0 bottom-0 flex items-center justify-end select-none pointer-events-none z-0">
-                <span className="text-[180px] sm:text-[280px] lg:text-[340px] font-sans font-black tracking-[-8px] lg:tracking-[-14px] leading-[0.72] text-white opacity-95 h-full flex items-center -translate-y-[2%]">
+                <span className="text-[12rem]" style={{ fontFamily: 'Inter, sans-serif', fontSize: '448px', lineHeight: '448px', fontWeight: 500, letterSpacing: '-22.4px', color: '#FFFFFF', width: '394.888px', height: '448px', borderRadius: '0px', margin: 0, padding: 0, display: 'flex', alignItems: 'center' }}>
                   AI
                 </span>
               </div>
