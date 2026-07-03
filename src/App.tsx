@@ -315,11 +315,11 @@ export default function App() {
                 <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.8] text-white">
                   Build
                 </span>
-                <span className="text-xl sm:text-[24px] font-classic italic text-white tracking-[0.15em] my-1">
-                  with
+                <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.8] text-white mt-1">
+                  Brand
                 </span>
-                <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.8] text-white">
-                  Brands
+                <span className="text-base sm:text-lg font-classic italic text-white/90 tracking-[0.15em] mt-3">
+                  with
                 </span>
               </div>
 
