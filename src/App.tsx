@@ -308,24 +308,24 @@ export default function App() {
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col justify-between min-h-[calc(100vh-220px)]">
             
             {/* Top row: Left block and Right block overlapping */}
-            <div className="relative w-full min-h-[380px] lg:min-h-[460px] flex items-center mb-12">
+            <div className="relative w-full flex items-center justify-between mb-12">
               
-              {/* Left block (absolute-left) */}
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 flex flex-col items-start text-left pointer-events-auto">
-                <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.85] text-white">
+              {/* Left block (relative to define height of top row) */}
+              <div className="relative z-10 flex flex-col items-start text-left pointer-events-auto">
+                <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.8] text-white">
                   Build
                 </span>
-                <span className="text-xl sm:text-[24px] font-classic italic text-white tracking-[0.15em] my-2 pl-2">
+                <span className="text-xl sm:text-[24px] font-classic italic text-white tracking-[0.15em] my-1 pl-2">
                   with
                 </span>
-                <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.85] text-white">
+                <span className="text-7xl sm:text-[110px] lg:text-[120px] font-classic font-normal leading-[0.8] text-white">
                   Brands
                 </span>
               </div>
 
-              {/* Right block (absolute-right, huge, right-aligned, overlapping vertically) */}
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 z-0 text-right select-none pointer-events-none">
-                <span className="text-[180px] sm:text-[280px] lg:text-[340px] font-sans font-black tracking-[-8px] lg:tracking-[-14px] leading-[0.75] text-white opacity-95">
+              {/* Right block (absolute-right, vertically matching height, top and bottom aligned) */}
+              <div className="absolute right-0 top-0 bottom-0 flex items-center justify-end select-none pointer-events-none z-0">
+                <span className="text-[180px] sm:text-[280px] lg:text-[340px] font-sans font-black tracking-[-8px] lg:tracking-[-14px] leading-[0.72] text-white opacity-95 h-full flex items-center">
                   AI
                 </span>
               </div>
