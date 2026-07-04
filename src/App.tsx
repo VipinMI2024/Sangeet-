@@ -4,13 +4,12 @@ import { Agent, RoadmapItem, DemoBooking, ConsultationRequest } from "./types";
 import Navigation from "./components/Navigation";
 import AgentCard from "./components/AgentCard";
 import AgentChatDrawer from "./components/AgentChatDrawer";
-import DemoModal from "./components/DemoModal";
 import AdminPanel from "./components/AdminPanel";
 import { LegalPage } from "./components/LegalPage";
-import { 
-  Bot, Sparkles, Terminal, ArrowRight, ChevronRight, Mail, Phone, MapPin, 
-  Plus, Check, TrendingUp, PlusCircle, CheckCircle, HelpCircle, Star, Shield, 
-  Zap, Calendar, Clock, HeartHandshake, RefreshCw, MessageCircle, Mic, Database, 
+import {
+  Bot, Sparkles, Terminal, ArrowRight, ChevronRight, Mail, Phone, MapPin,
+  Plus, Check, TrendingUp, PlusCircle, CheckCircle, HelpCircle, Star, Shield,
+  Zap, Calendar, Clock, HeartHandshake, RefreshCw, MessageCircle, Mic, Database,
   Target, Linkedin
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
@@ -30,7 +29,6 @@ export default function App() {
   }, [isDarkMode]);
 
   // Modal states
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [preselectedAgent, setPreselectedAgent] = useState("LinkedIn AI Agent");
 
   // Chat Drawer states
@@ -108,7 +106,7 @@ export default function App() {
         case "WhatsApp API":
           return (
             <svg className="h-6 w-6 text-emerald-500" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
             </svg>
           );
         case "AI Voice Bots":
@@ -148,17 +146,16 @@ export default function App() {
             <TrendingUp className="h-4.5 w-4.5 text-sage" />
             <span>{item.upvotes} votes</span>
           </div>
-          
+
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => handleVote(item.id)}
             disabled={isVoted}
-            className={`p-2.5 rounded-full transition cursor-pointer focus:outline-none ${
-              isVoted
-                ? "bg-sage/10 text-sage"
-                : "bg-bone-mist hover:bg-ash/40 text-bark"
-            }`}
+            className={`p-2.5 rounded-full transition cursor-pointer focus:outline-none ${isVoted
+              ? "bg-sage/10 text-sage"
+              : "bg-bone-mist hover:bg-ash/40 text-bark"
+              }`}
             title={isVoted ? "Upvoted!" : "Upvote Feature"}
           >
             <Check className="h-4.5 w-4.5" />
@@ -171,7 +168,7 @@ export default function App() {
   // Launch prefilled Book Demo Modal
   const handleDeployAgentClick = (agentName: string) => {
     setPreselectedAgent(agentName);
-    setIsDemoModalOpen(true);
+    window.open("https://calendly.com/sangeetmalhotra81", "_blank");
   };
 
   // Handle Custom Agent form creation
@@ -191,7 +188,7 @@ export default function App() {
 
     setCustomAgents([newAgent]); // Supports one custom prototyped agent at a time
     setIsCustomCreated(true);
-    
+
     // Auto launch prompt feedback
     setTimeout(() => {
       setIsCustomCreated(false);
@@ -264,10 +261,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col font-sans antialiased text-bark bg-bone-mist selection:bg-periwinkle-wash/35">
-      
+
       {/* Sticky Header Navigation */}
-      <Navigation 
-        onBookDemoClick={() => setIsDemoModalOpen(true)}
+      <Navigation
+        onBookDemoClick={() => window.open("https://calendly.com/sangeetmalhotra81", "_blank")}
         isAdminMode={isAdminMode}
         onToggleAdminMode={() => setIsAdminMode(!isAdminMode)}
         isDarkMode={isDarkMode}
@@ -276,7 +273,7 @@ export default function App() {
 
       {/* Main Container */}
       <main className="flex-grow">
-        
+
         {/* COLLAPSIBLE LAB ADMIN PANEL */}
         <AnimatePresence>
           {isAdminMode && (
@@ -304,12 +301,12 @@ export default function App() {
           >
             <TubesBackground className="opacity-90 h-full w-full" />
           </motion.div>
-          
+
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col justify-center min-h-[calc(100vh-220px)] py-8">
-            
+
             {/* Top row: Left block and Right block overlapping */}
-            <div 
-              className="relative w-full max-w-[1400px]" 
+            <div
+              className="relative w-full max-w-[1400px]"
               style={{
                 height: 'clamp(250px, 35vw, 500px)',
                 borderRadius: '0px',
@@ -327,12 +324,13 @@ export default function App() {
                 overflow: 'hidden'
               }}
             >
-              
+
               {/* Centered block */}
               <div 
-                className="relative z-10 flex flex-col items-center text-center pointer-events-auto"
+                className="relative z-10 flex flex-col items-start text-left pointer-events-auto"
                 style={{
-                  transform: 'translateX(clamp(-150px, -10vw, 0px))' // <-- Responsive translate shift
+                  transform: 'translateX(clamp(-150px, -10vw, 0px))', // <-- Responsive translate shift
+                  width: 'min(419.85px, 100%)'
                 }}
               >
                 <span style={{ fontFamily: 'Sora, sans-serif', fontSize: 'clamp(40px, 11vw, 160px)', lineHeight: 'clamp(40px, 11vw, 160px)', fontWeight: 500, letterSpacing: 'clamp(-6.4px, -0.4vw, -2px)', color: '#FFFFFF', width: 'min(414.25px, 100%)', height: 'auto', borderRadius: '0px', display: 'block' }}>
@@ -347,7 +345,7 @@ export default function App() {
               </div>
 
               {/* Right block (absolute-right, vertically matching height, top and bottom aligned) */}
-              <div 
+              <div
                 className="absolute right-0 top-0 bottom-0 flex items-center justify-end select-none pointer-events-none z-0"
                 style={{
                   transform: 'translateX(clamp(-180px, -12vw, 0px))' // <-- Responsive translate shift
@@ -361,7 +359,7 @@ export default function App() {
 
             {/* Bottom block: Subheading + Button centered column */}
             <div className="w-full flex flex-col items-center text-center mt-6 sm:mt-10 space-y-8 z-10">
-              
+
               {/* Subheading: "AI that work 24/7" */}
               <h2 className="text-2xl sm:text-[32px] lg:text-[29px] text-white font-sans tracking-tight leading-snug">
                 <span className="font-bold">AI</span>
@@ -374,7 +372,7 @@ export default function App() {
                   whileHover={{ scale: 1.03, y: -3 }}
                   whileTap={{ scale: 0.94 }}
                   transition={{ type: "spring", stiffness: 500, damping: 18 }}
-                  onClick={() => setIsDemoModalOpen(true)}
+                  onClick={() => window.open("https://calendly.com/sangeetmalhotra81", "_blank")}
                   className="group w-full bg-white hover:bg-zinc-100 hover:shadow-[0_0_30px_rgba(255,255,255,0.25)] text-black text-center font-semibold text-sm tracking-[0.15em] py-4.5 px-8 rounded-full transition-all duration-150 cursor-pointer focus:outline-none flex items-center justify-center gap-2"
                 >
                   <span>BOOK DEMO CALL</span>
@@ -382,16 +380,16 @@ export default function App() {
                 </motion.button>
               </motion.div>
             </div>
-            
+
           </div>
         </section>
 
         {/* SPECIALIZED AGENT TEAMS */}
         <section id="agents" className="pt-14 pb-8 lg:pt-16 lg:pb-10 border-b border-ash bg-paper-white">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+
             {/* Roster Introduction */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -404,7 +402,7 @@ export default function App() {
             </motion.div>
 
             {/* Standard Agent Cards Grid */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -449,9 +447,9 @@ export default function App() {
         {/* PRODUCT ROADMAP / COMING SOON */}
         <section id="roadmap" className="pt-14 pb-20 lg:pt-14 lg:pb-28 border-b border-ash bg-bone-mist">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            
+
             {/* Header */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -469,7 +467,7 @@ export default function App() {
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -494,10 +492,10 @@ export default function App() {
 
         {/* WHY CHOOSE US */}
         <section id="why-us" className="py-14 lg:py-16 border-b border-ash bg-paper-white overflow-hidden">
-          
+
           {/* Header */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -530,7 +528,7 @@ export default function App() {
           {/* Bento Grid Containers */}
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Bento Grid layout */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -562,9 +560,9 @@ export default function App() {
         <section id="contact" className="py-20 lg:py-28 border-b border-ash bg-bone-mist">
           <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-              
+
               {/* Contact Information Cards */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -623,7 +621,7 @@ export default function App() {
               </motion.div>
 
               {/* Consultation Input Form */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -639,10 +637,10 @@ export default function App() {
 
                 <form onSubmit={handleConsultSubmit} className="space-y-4">
                   {isConsultSuccess && (
-                     <div className="bg-sage/10 text-bark text-xs p-4 rounded-xl border border-sage/20 flex items-center gap-2 font-sans">
-                       <CheckCircle className="h-4 w-4 text-sage shrink-0" />
-                       <span>Consultation blueprint successfully registered. Our lab coordinator has queued your workflow!</span>
-                     </div>
+                    <div className="bg-sage/10 text-bark text-xs p-4 rounded-xl border border-sage/20 flex items-center gap-2 font-sans">
+                      <CheckCircle className="h-4 w-4 text-sage shrink-0" />
+                      <span>Consultation blueprint successfully registered. Our lab coordinator has queued your workflow!</span>
+                    </div>
                   )}
 
                   {consultError && (
@@ -745,7 +743,7 @@ export default function App() {
                 {siteContent.navigation.logo}
               </span>
             </div>
-            
+
             <p className="text-xs font-mono text-zinc-400">
               {siteContent.footer.tagline}
             </p>
@@ -776,7 +774,7 @@ export default function App() {
       </footer>
 
       {/* MODALS & DRAWERS OVERLAYS */}
-      
+
       {/* 1. Live Chat Playground Drawer */}
       <AnimatePresence mode="wait">
         {activeChatAgent && (
@@ -789,15 +787,7 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* 2. Book Demo Modal Dialog */}
-      <DemoModal
-        isOpen={isDemoModalOpen}
-        preselectedAgent={preselectedAgent}
-        onClose={() => setIsDemoModalOpen(false)}
-        onSuccess={() => {
-          setCrmTrigger((prev) => prev + 1); // Trigger Admin lead list update
-        }}
-      />
+
 
       {/* 3. Legal Document Overlay Screen */}
       <AnimatePresence mode="wait">
@@ -823,7 +813,7 @@ export default function App() {
         title="Chat with us on WhatsApp"
       >
         <svg className="w-6 h-6 fill-white" viewBox="0 0 448 512">
-          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.7-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
         </svg>
       </motion.a>
 
