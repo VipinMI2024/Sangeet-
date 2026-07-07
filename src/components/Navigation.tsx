@@ -72,7 +72,15 @@ export default function Navigation({
               </button>
             ))}
 
-
+            <a
+              href="https://intellitech.187.127.187.153.sslip.io/dashboard.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[13px] font-sans font-medium uppercase tracking-[0.071em] text-charcoal hover:text-bark hover:underline underline-offset-4 transition duration-150 cursor-pointer flex items-center gap-1.5"
+            >
+              LinkedIn Agent
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-chartreuse-pop animate-pulse" />
+            </a>
 
             {/* Outlined Nav Button / 40px radius on the CTA button */}
             <motion.button
@@ -118,6 +126,18 @@ export default function Navigation({
                   {link.label}
                 </button>
               ))}
+
+              <a
+                href="https://intellitech.187.127.187.153.sslip.io/dashboard.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="w-full text-left px-4 py-3 text-sm font-sans font-medium uppercase tracking-[0.071em] text-charcoal hover:bg-ash/30 rounded-lg cursor-pointer flex items-center justify-between"
+              >
+                <span>LinkedIn Agent</span>
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-chartreuse-pop" />
+              </a>
+
               <div className="pt-4 px-4 flex flex-col gap-3">
                 <button
                   onClick={() => {

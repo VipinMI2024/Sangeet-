@@ -715,6 +715,19 @@ export default function App() {
               </span>
             </div>
 
+            <div className="flex items-center gap-4">
+              <a 
+                href="https://www.linkedin.com/company/intelli-tech-ai-labs/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-zinc-300 hover:text-white bg-zinc-900/80 border border-zinc-850 hover:border-zinc-700 px-4 py-2 rounded-full transition duration-150"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-3.5 w-3.5 text-[#9fa6ff]" />
+                <span>LinkedIn</span>
+              </a>
+            </div>
+
             <p className="text-xs font-mono text-zinc-400">
               {siteContent.footer.tagline}
             </p>
