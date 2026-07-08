@@ -72,7 +72,7 @@ export default function App() {
       "[LINKEDIN_AGENT] Personalized invitation compiled for VP of Growth at Stripe.",
       "[VOUCHERS_CONCIERGE] Composite calculation complete: Starbucks 15% + coupon hold.",
       "[LINKEDIN_AGENT] Outbound pipeline updated. Checked 14 profiles.",
-      "[SYSTEM] Routing telemetry report to South Delhi, Chatarpur office gateway.",
+      "[SYSTEM] Routing telemetry report to South Delhi, Chhatarpur office gateway.",
       "[VOUCHERS_CONCIERGE] Curating exclusive 2026 winter deals for Nike store locator.",
       "[LINKEDIN_AGENT] Appointment booked successfully: Friday at 2:00 PM EST.",
       "[SYSTEM] CPU utilization stable. 100% agent operational health.",
